@@ -133,14 +133,4 @@ This project helped me understand:
 - Role-Based Authentication
 - Backend Integration with Node.js/Spring Boot
 
----
 
-## 👩‍💻 Author
-
-**Aarzoo**
-
-B.Tech Computer Science and Engineering Student
-
----
-
-⭐ If you found this project useful, consider giving it a star!
