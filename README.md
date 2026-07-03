@@ -1,60 +1,46 @@
-# 🛍️ ShopEase – E-commerce Web Application
+# 🔐 Login App
 
-ShopEase is a modern and responsive e-commerce web application built using **Angular**. It provides a seamless shopping experience for customers while allowing sellers to manage their products efficiently. The project demonstrates the implementation of Angular concepts such as routing, services, guards, components, and HTTP requests.
+A simple and responsive **Login Application** built using **Angular**. This project demonstrates user authentication, routing, form validation, and component-based architecture using a mock backend powered by JSON Server.
 
 ---
 
 ## 🚀 Features
 
-### 👤 User Features
-- User Registration and Login
-- Secure Authentication
-- Browse Products
-- View Product Details
-- Add Products to Cart
-- Place Orders
-- View Order History
+- User Registration (Sign Up)
+- User Login
+- Form Validation
+- Authentication with JSON Server
+- Angular Routing
 - Responsive User Interface
-
-### 🛒 Seller Features
-- Seller Login
-- Seller Dashboard
-- Add New Products
-- Update Existing Products
-- Delete Products
-- View Product Listings
+- Component-Based Architecture
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
 - Angular
 - TypeScript
 - HTML5
 - CSS3
-- Bootstrap 5
-- JSON Server (Mock Backend)
+- Bootstrap
+- JSON Server
 - RxJS
-- Angular Router
-- Angular HTTP Client
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
-```
+```text
 src/
 │
 ├── app/
 │   ├── components/
-│   ├── pages/
 │   ├── services/
-│   ├── guards/
 │   ├── models/
+│   ├── guards/
 │   └── app.routes.ts
 │
 ├── assets/
-├── environments/
 └── styles.css
 ```
 
@@ -65,13 +51,13 @@ src/
 ### Clone the repository
 
 ```bash
-git clone https://github.com/your-username/ShopEase.git
+git clone https://github.com/your-username/login-app.git
 ```
 
 ### Navigate to the project
 
 ```bash
-cd ShopEase
+cd login-app
 ```
 
 ### Install dependencies
@@ -80,13 +66,13 @@ cd ShopEase
 npm install
 ```
 
-### Start the Angular application
+### Run the Angular application
 
 ```bash
 ng serve
 ```
 
-Open your browser and visit:
+The application will be available at:
 
 ```
 http://localhost:4200
@@ -94,15 +80,15 @@ http://localhost:4200
 
 ---
 
-## ▶️ Running JSON Server
+## ▶️ Run JSON Server
 
-Start the mock backend using:
+Start the mock backend:
 
 ```bash
 npx json-server --watch db.json
 ```
 
-The backend will run at:
+The backend will be available at:
 
 ```
 http://localhost:3000
@@ -114,43 +100,47 @@ http://localhost:3000
 
 Add screenshots of:
 
-- 🏠 Home Page
-- 🔐 Login Page
-- 📝 Signup Page
-- 📦 Products Page
-- 🛒 Cart Page
-- 📋 Orders Page
-- 👨‍💼 Seller Dashboard
-- ➕ Add Product
-- ✏️ Update Product
+- Home Page
+- Login Page
+- Signup Page
+- Dashboard
 
 ---
 
-## 🎯 Learning Outcomes
+## 📚 Learning Outcomes
 
-This project helped me gain practical experience in:
+This project helped me understand:
 
 - Angular Components
-- Data Binding
 - Routing & Navigation
-- Route Guards
-- Services & Dependency Injection
+- Services and Dependency Injection
+- Form Validation
 - HTTP Client
 - CRUD Operations
-- Authentication
-- Reactive Programming with RxJS
+- JSON Server Integration
+- TypeScript
 - Responsive Web Design
 
 ---
 
-## 🔮 Future Improvements
+## 🔮 Future Enhancements
 
-- Payment Gateway Integration
-- Product Search & Filters
-- Wishlist Functionality
-- User Profile Management
-- Order Tracking
-- Product Reviews & Ratings
 - JWT Authentication
-- Backend Integration with Spring Boot/Node.js
-- Database Integration (MySQL/MongoDB)
+- Password Encryption
+- Forgot Password Feature
+- Email Verification
+- User Profile Page
+- Role-Based Authentication
+- Backend Integration with Node.js/Spring Boot
+
+---
+
+## 👩‍💻 Author
+
+**Aarzoo**
+
+B.Tech Computer Science and Engineering Student
+
+---
+
+⭐ If you found this project useful, consider giving it a star!
