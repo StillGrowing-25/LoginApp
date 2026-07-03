@@ -1,0 +1,130 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <div class="brand-icon">⚡</div>
+      <span class="brand-name">LoginApp</span>
+    </div>
+
+    <h1 class="auth-title">Create an account</h1>
+    <p class="auth-subtitle">Join thousands of users — it's free.</p>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+      <!-- Name Row -->
+      <div class="name-row">
+        <div class="field-group" [class.has-error]="hasError('firstName')">
+          <label for="firstName" class="field-label">First name</label>
+          <input id="firstName" type="text" class="field-input" formControlName="firstName" placeholder="Jane" autocomplete="given-name" />
+          @if (hasError('firstName', 'required')) {
+            <span class="field-error">Required.</span>
+          } @else if (hasError('firstName', 'minlength')) {
+            <span class="field-error">At least 2 characters.</span>
+          }
+        </div>
+        <div class="field-group" [class.has-error]="hasError('lastName')">
+          <label for="lastName" class="field-label">Last name</label>
+          <input id="lastName" type="text" class="field-input" formControlName="lastName" placeholder="Doe" autocomplete="family-name" />
+          @if (hasError('lastName', 'required')) {
+            <span class="field-error">Required.</span>
+          }
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="field-group" [class.has-error]="hasError('email')">
+        <label for="email" class="field-label">Email address</label>
+        <input id="email" type="email" class="field-input" formControlName="email" placeholder="you@example.com" autocomplete="email" />
+        @if (hasError('email', 'required')) {
+          <span class="field-error">Email is required.</span>
+        } @else if (hasError('email', 'email')) {
+          <span class="field-error">Enter a valid email address.</span>
+        }
+      </div>
+
+      <!-- Password + Strength -->
+      <div class="field-group" [class.has-error]="hasError('password')">
+        <label for="password" class="field-label">Password</label>
+        <div class="input-icon-wrap">
+          <input
+            id="password"
+            [type]="showPassword() ? 'text' : 'password'"
+            class="field-input"
+            formControlName="password"
+            placeholder="Min 8 chars, upper, number, symbol"
+            autocomplete="new-password"
+          />
+          <button type="button" class="icon-btn" (click)="togglePassword()">
+            {{ showPassword() ? '🚫' : '👁' }}
+          </button>
+        </div>
+        @if (form.get('password')?.value) {
+          <div class="strength-bar-wrap">
+            <div class="strength-bars">
+              @for (filled of strengthBars; track $index) {
+                <div class="strength-bar" [style.background]="filled ? passwordStrength.color : '#e9ecef'"></div>
+              }
+            </div>
+            <span class="strength-label" [style.color]="passwordStrength.color">
+              {{ passwordStrength.label }}
+            </span>
+          </div>
+        }
+        @if (hasError('password', 'required')) {
+          <span class="field-error">Password is required.</span>
+        } @else if (hasError('password', 'minlength')) {
+          <span class="field-error">Password must be at least 8 characters.</span>
+        } @else if (hasError('password', 'weakPassword')) {
+          <span class="field-error">Include uppercase, lowercase, a number, and a symbol.</span>
+        }
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="field-group" [class.has-error]="hasError('confirmPassword')">
+        <label for="confirmPassword" class="field-label">Confirm password</label>
+        <div class="input-icon-wrap">
+          <input
+            id="confirmPassword"
+            [type]="showConfirm() ? 'text' : 'password'"
+            class="field-input"
+            formControlName="confirmPassword"
+            placeholder="Repeat your password"
+            autocomplete="new-password"
+          />
+          <button type="button" class="icon-btn" (click)="toggleConfirm()">
+            {{ showConfirm() ? '🚫' : '👁' }}
+          </button>
+        </div>
+        @if (hasError('confirmPassword', 'required')) {
+          <span class="field-error">Please confirm your password.</span>
+        } @else if (hasError('confirmPassword', 'passwordMismatch')) {
+          <span class="field-error">Passwords do not match.</span>
+        }
+      </div>
+
+      <!-- Terms -->
+      <div class="terms-row" [class.has-error]="form.get('agreeToTerms')?.invalid && form.get('agreeToTerms')?.touched">
+        <input type="checkbox" id="terms" class="checkbox-input" formControlName="agreeToTerms" />
+        <label for="terms" class="terms-text">
+          I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+        </label>
+      </div>
+      @if (form.get('agreeToTerms')?.invalid && form.get('agreeToTerms')?.touched) {
+        <span class="field-error" style="margin-top: -10px; display: block; margin-bottom: 10px;">You must accept the terms.</span>
+      }
+
+      <!-- Submit -->
+      <button type="submit" class="btn-primary" [disabled]="isLoading()">
+        @if (isLoading()) {
+          <span class="spinner"></span> Creating account...
+        } @else {
+          Create account
+        }
+      </button>
+
+    </form>
+
+    <p class="auth-footer">
+      Already have an account? <a routerLink="/login" class="auth-link">Sign in</a>
+    </p>
+  </div>
+</div>

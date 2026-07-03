@@ -1,59 +1,156 @@
-# LoginApp
+# 🛍️ ShopEase – E-commerce Web Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.1.
+ShopEase is a modern and responsive e-commerce web application built using **Angular**. It provides a seamless shopping experience for customers while allowing sellers to manage their products efficiently. The project demonstrates the implementation of Angular concepts such as routing, services, guards, components, and HTTP requests.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Features
+
+### 👤 User Features
+- User Registration and Login
+- Secure Authentication
+- Browse Products
+- View Product Details
+- Add Products to Cart
+- Place Orders
+- View Order History
+- Responsive User Interface
+
+### 🛒 Seller Features
+- Seller Login
+- Seller Dashboard
+- Add New Products
+- Update Existing Products
+- Delete Products
+- View Product Listings
+
+---
+
+## 🛠️ Technologies Used
+
+- Angular
+- TypeScript
+- HTML5
+- CSS3
+- Bootstrap 5
+- JSON Server (Mock Backend)
+- RxJS
+- Angular Router
+- Angular HTTP Client
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+│
+├── app/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── guards/
+│   ├── models/
+│   └── app.routes.ts
+│
+├── assets/
+├── environments/
+└── styles.css
+```
+
+---
+
+## ⚙️ Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/your-username/ShopEase.git
+```
+
+### Navigate to the project
+
+```bash
+cd ShopEase
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the Angular application
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open your browser and visit:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
+
+## ▶️ Running JSON Server
+
+Start the mock backend using:
 
 ```bash
-ng generate --help
+npx json-server --watch db.json
 ```
 
-## Building
+The backend will run at:
 
-To build the project run:
-
-```bash
-ng build
+```
+http://localhost:3000
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 📸 Screenshots
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Add screenshots of:
 
-```bash
-ng test
-```
+- 🏠 Home Page
+- 🔐 Login Page
+- 📝 Signup Page
+- 📦 Products Page
+- 🛒 Cart Page
+- 📋 Orders Page
+- 👨‍💼 Seller Dashboard
+- ➕ Add Product
+- ✏️ Update Product
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🎯 Learning Outcomes
 
-```bash
-ng e2e
-```
+This project helped me gain practical experience in:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- Angular Components
+- Data Binding
+- Routing & Navigation
+- Route Guards
+- Services & Dependency Injection
+- HTTP Client
+- CRUD Operations
+- Authentication
+- Reactive Programming with RxJS
+- Responsive Web Design
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🔮 Future Improvements
+
+- Payment Gateway Integration
+- Product Search & Filters
+- Wishlist Functionality
+- User Profile Management
+- Order Tracking
+- Product Reviews & Ratings
+- JWT Authentication
+- Backend Integration with Spring Boot/Node.js
+- Database Integration (MySQL/MongoDB)

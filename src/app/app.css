@@ -1,0 +1,18 @@
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+}
+
+.success-icon {
+  width: 56px;
+  height: 56px;
+  background-color: #198754;
+  color: white;
+  font-size: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}

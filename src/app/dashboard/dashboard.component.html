@@ -1,0 +1,153 @@
+<div class="dashboard-root">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon-sm">⚡</div>
+      <span class="brand-text">VaultApp</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item" [class.active]="activeTab() === 'overview'" (click)="activeTab.set('overview')">
+        <span class="nav-icon">📊</span> Overview
+      </button>
+      <button class="nav-item" [class.active]="activeTab() === 'profile'" (click)="activeTab.set('profile')">
+        <span class="nav-icon">👤</span> Profile
+      </button>
+      <button class="nav-item" [class.active]="activeTab() === 'security'" (click)="activeTab.set('security')">
+        <span class="nav-icon">🔒</span> Security
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-mini">
+        <div class="avatar-sm">{{ initials }}</div>
+        <div class="user-mini-info">
+          <span class="user-mini-name">{{ user()?.firstName }} {{ user()?.lastName }}</span>
+          <span class="user-mini-email">{{ user()?.email }}</span>
+        </div>
+      </div>
+      <button class="logout-btn" (click)="logout()">Sign out</button>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main-content">
+
+    <!-- OVERVIEW TAB -->
+    @if (activeTab() === 'overview') {
+      <div class="tab-content">
+        <h2 class="page-title">Welcome back, {{ user()?.firstName }}! 👋</h2>
+        <p class="page-sub">Here's a quick look at your account.</p>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Member since</div>
+            <div class="stat-value">{{ memberSince }}</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Account status</div>
+            <div class="stat-value"><span class="badge-active">● Active</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Plan</div>
+            <div class="stat-value">Free tier</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">2FA</div>
+            <div class="stat-value"><span class="badge-warn">Not enabled</span></div>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <h3 class="section-title">Recent activity</h3>
+          <ul class="activity-list">
+            <li class="activity-item">
+              <span class="activity-icon green">✓</span>
+              <div class="activity-detail">
+                <strong>Signed in</strong>
+                <span>Just now · Web browser</span>
+              </div>
+            </li>
+            <li class="activity-item">
+              <span class="activity-icon blue">⚙</span>
+              <div class="activity-detail">
+                <strong>Account created</strong>
+                <span>{{ memberSince }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    }
+
+    <!-- PROFILE TAB -->
+    @if (activeTab() === 'profile') {
+      <div class="tab-content">
+        <h2 class="page-title">Profile</h2>
+        <p class="page-sub">Your personal information.</p>
+
+        <div class="section-card profile-card">
+          <div class="avatar-lg">{{ initials }}</div>
+          <div class="profile-fields">
+            <div class="profile-row">
+              <div class="profile-field">
+                <span class="profile-label">First name</span>
+                <span class="profile-value">{{ user()?.firstName }}</span>
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Last name</span>
+                <span class="profile-value">{{ user()?.lastName }}</span>
+              </div>
+            </div>
+            <div class="profile-field full">
+              <span class="profile-label">Email address</span>
+              <span class="profile-value">{{ user()?.email }}</span>
+            </div>
+            <div class="profile-field full">
+              <span class="profile-label">Account ID</span>
+              <span class="profile-value mono">{{ user()?.id }}</span>
+            </div>
+          </div>
+          <div class="card-note">Profile editing is not wired up in this demo — connect it to your API.</div>
+        </div>
+      </div>
+    }
+
+    <!-- SECURITY TAB -->
+    @if (activeTab() === 'security') {
+      <div class="tab-content">
+        <h2 class="page-title">Security</h2>
+        <p class="page-sub">Manage your account security settings.</p>
+
+        <div class="section-card">
+          <div class="security-row">
+            <div>
+              <div class="sec-item-title">Password</div>
+              <div class="sec-item-sub">Last changed: unknown</div>
+            </div>
+            <button class="btn-outline">Change password</button>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <div class="security-row">
+            <div>
+              <div class="sec-item-title">Two-factor authentication</div>
+              <div class="sec-item-sub">Add an extra layer of security to your account.</div>
+            </div>
+            <span class="badge-warn">Disabled</span>
+          </div>
+          <button class="btn-primary-sm" style="margin-top:12px">Enable 2FA</button>
+        </div>
+
+        <div class="section-card danger-zone">
+          <div class="sec-item-title" style="color:#dc3545">Danger zone</div>
+          <div class="sec-item-sub">Permanently delete your account and all associated data.</div>
+          <button class="btn-danger" style="margin-top:12px">Delete account</button>
+        </div>
+      </div>
+    }
+
+  </main>
+</div>
